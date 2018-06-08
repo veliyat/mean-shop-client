@@ -1,14 +1,11 @@
-import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ShopComponent } from './components/home/shop/shop.component';
-import { HomeComponent } from './components/home/home.component';
-
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'shop', component: ShopComponent },
+  { path: '', loadChildren: 'app/components/home/home.module#HomeModule' },
+  { path: 'admin', loadChildren: 'app/components/admin/admin.module#AdminModule' }  
 ];
 
-export const routerForRoot = RouterModule.forRoot(routes);
+export const RouterForRoot = RouterModule.forRoot(routes);
+
 
 
